@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faithworks Venture Farming | St Faith's Rusape</title>
+    <meta name="description" content="Faithworks Venture Farming - 10 hectares of sustainable agriculture in St Faith's Rusape Osborne area. Kalahari Red goats, maize, vegetables & more.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --deep-green: #2d5a27;
+            --forest-green: #3d7a35;
+            --warm-brown: #8B5E3C;
+            --golden: #D4A843;
+            --cream: #F5F0E6;
+            --dark: #1a1a1a;
+            --light-text: #f5f5f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background: var(--cream);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(45, 90, 39, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: var(--golden);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--cream);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--cream);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--golden);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--golden);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--cream);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(45,90,39,0.85) 0%, rgba(139,94,60,0.8) 100%),
+                        url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--light-text);
+            position: relative;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.2;
+        }
+
+        .hero .tagline {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--golden);
+            margin-bottom: 1.5rem;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s ease;
+            display: inline-block;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--golden);
+            color: var(--dark);
+        }
+
+        .btn-primary:hover {
+            background: #c49a3a;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(212,168,67,0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--cream);
+            border: 2px solid var(--cream);
+        }
+
+        .btn-secondary:hover {
+            background: var(--cream);
+            color: var(--deep-green);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            background: #1da851;
+            transform: translateY(-2px);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--deep-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header .underline {
+            width: 80px;
+            height: 4px;
+            background: var(--golden);
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            color: #666;
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* About Section */
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--golden);
+            border-radius: 15px;
+            z-index: -1;
+        }
+
+        .about-content h3 {
+            color: var(--warm-brown);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .value-card {
+            background: var(--cream);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--golden);
+        }
+
+        .value-card h4 {
+            color: var(--deep-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .value-card p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Ventures Section */
+        .ventures {
+            background: var(--cream);
+        }
+
+        .ventures-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .venture-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .venture-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .venture-card .card-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--deep-green), var(--forest-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .venture-card .card-content {
+            padding: 2rem;
+        }
+
+        .venture-card h3 {
+            color: var(--deep-green);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .venture-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .venture-card .status {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-top: 1rem;
+        }
+
+        .status-active {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-coming {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        /* Products Section */
+        .products {
+            background: white;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--cream);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .product-card:hover {
+            border-color: var(--golden);
+            transform: scale(1.02);
+        }
+
+        .product-card i {
+            font-size: 2.5rem;
+            color: var(--deep-green);
+            margin-bottom: 1rem;
+        }
+
+        .product-card h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-card .price-tag {
+            color: var(--warm-brown);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin: 0.5rem 0;
+        }
+
+        .product-card .availability {
+            font-size: 0.85rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        .available-now {
+            background: var(--deep-green);
+            color: white;
+        }
+
+        .coming-soon-tag {
+            background: var(--golden);
+            color: var(--dark);
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background: var(--cream);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 280px;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 2rem 1.5rem 1.5rem;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        /* Blog Section */
+        .blog {
+            background: white;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: var(--cream);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-card .blog-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--warm-brown), var(--golden));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .blog-card .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-card .date {
+            color: var(--warm-brown);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .blog-card h3 {
+            color: var(--deep-green);
+            margin: 0.5rem 0;
+            font-size: 1.2rem;
+        }
+
+        .blog-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .read-more {
+            color: var(--deep-green);
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, var(--deep-green) 0%, var(--forest-green) 100%);
+            color: var(--light-text);
+        }
+
+        .contact .section-header h2 {
+            color: var(--golden);
+        }
+
+        .contact .section-header p {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            color: var(--golden);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item i {
+            font-size: 1.3rem;
+            color: var(--golden);
+            margin-top: 0.2rem;
+        }
+
+        .contact-item div h4 {
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-item div p, .contact-item div a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item div a:hover {
+            color: var(--golden);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--cream);
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: var(--golden);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+
+        .contact-form {
+            background: rgba(255,255,255,0.1);
+            padding: 2.5rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.9);
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: 2px solid var(--golden);
+            background: white;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: rgba(255,255,255,0.7);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        footer .heart {
+            color: #e74c3c;
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            box-shadow: 0 5px 20px rgba(37,211,102,0.4);
+            z-index: 999;
+            transition: transform 0.3s;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--deep-green);
+                flex-direction: column;
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.1rem;
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Map placeholder */
+        .map-container {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .map-container i {
+            font-size: 3rem;
+            color: var(--golden);
+        }
+
+        .map-container p {
+            color: rgba(255,255,255,0.8);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Faithworks <span>Venture Farming</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#ventures">Our Ventures</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#blog">Updates</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Faithworks Venture Farming</h1>
+            <p class="tagline">"Growing Faith, Harvesting Prosperity"</p>
+            <p>Located on 10 hectares in St Faith's, Rusape Osborne area — cultivating quality, sustainability, and community growth through modern agriculture.</p>
+            <div class="hero-buttons">
+                <a href="#ventures" class="btn btn-primary">Explore Our Farm</a>
+                <a href="#contact" class="btn btn-secondary">Contact Us</a>
+                <a href="#products" class="btn btn-secondary">Our Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>About Us</h2>
+                <div class="underline"></div>
+                <p>Where dedication meets the soil</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-image fade-in">
+                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800" alt="Faithworks Farm Landscape">
+                </div>
+                <div class="about-content fade-in">
+                    <h3>Our Story</h3>
+                    <p>Faithworks Venture Farming is a growing agricultural enterprise rooted in the fertile lands of St Faith's, Rusape Osborne area. Spanning 10 hectares of prime farming land, we are committed to producing high-quality agricultural products while promoting sustainable farming practices.</p>
+                    <p>From our humble beginnings with Kalahari Red goats and maize, we have grown into a diversified farming operation with a vision to become a leading agricultural producer in the Manicaland region.</p>
+                    
+                    <div class="values-grid">
+                        <div class="value-card">
+                            <h4><i class="fas fa-shield-alt"></i> Integrity</h4>
+                            <p>Honest, transparent farming practices in everything we do.</p>
+                        </div>
+                        <div class="value-card">
+                            <h4><i class="fas fa-leaf"></i> Sustainability</h4>
+                            <p>Protecting the land for future generations through responsible stewardship.</p>
+                        </div>
+                        <div class="value-card">
+                            <h4><i class="fas fa-award"></i> Quality</h4>
+                            <p>Delivering premium produce that meets the highest standards.</p>
+                        </div>
+                        <div class="value-card">
+                            <h4><i class="fas fa-chart-line"></i> Growth</h4>
+                            <p>Continuously expanding and innovating our farming operations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ventures Section -->
+    <section class="ventures" id="ventures">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Our Ventures</h2>
+                <div class="underline"></div>
+                <p>Diversified agriculture for a thriving future</p>
+            </div>
+            <div class="ventures-grid">
+                <!-- Current Ventures -->
+                <div class="venture-card fade-in">
+                    <div class="card-image">
+                        <i class="fas fa-horse"></i>
+                    </div>
+                    <div class="card-content">
+                        <span class="status status-active">Active</span>
+                        <h3>Kalahari Red Goat Farming</h3>
+                        <p>We raise premium Kalahari Red goats, renowned for their excellent meat quality, fast growth rate, and adaptability to Zimbabwe's climate. Our breeding program focuses on genetic improvement and herd health.</p>
+                    </div>
+                </div>
+
+                <div class="venture-card fade-in">
+                    <div class="card-image">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="card-content">
+                        <span class="status status-active">Active</span>
+                        <h3>Maize Cropping</h3>
+                        <p>Large-scale maize production utilizing modern farming techniques. We grow high-yield varieties suited to the Rusape climate, ensuring consistent supply for local markets and bulk buyers.</p>
+                    </div>
+                </div>
+
+                <div class="venture-card fade-in">
+                    <div class="card-image">
+                        <i class="fas fa-carrot"></i>
+                    </div>
+                    <div class="card-content">
+                        <span class="status status-active">Active</span>
+                        <h3>Covo & Rape Fields</h3>
+                        <p>Fresh, nutritious vegetable production supplying local communities, schools, and markets. Our covo and rape fields are cultivated with organic practices for healthy, chemical-free greens.</p>
+                    </div>
+                </div>
+
+                <!-- Future Ventures -->
+                <div class="venture-card fade-in">
+                    <div class="card-image" style="background: linear-gradient(135deg, var(--warm-brown), var(--golden));">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <div class="card-content">
+                        <span class="status status-coming">Coming Soon</span>
+                        <h3>Seedling Production</h3>
+                        <p>We plan to establish a seedling nursery to supply farmers with quality vegetable and crop seedlings, supporting agricultural development across the region.</p>
+                    </div>
+                </div>
+
+                <div class="venture-card fade-in">
+                    <div class="card-image" style="background: linear-gradient(135deg, var(--warm-brown), var(--golden));">
+                        <i class="fas fa-cow"></i>
+                    </div>
+                    <div class="card-content">
+                        <span class="status status-coming">Coming Soon</span>
+                        <h3>Cattle Fattening</h3>
+                        <p>Expansion into beef cattle fattening to meet growing demand for quality meat. We will focus on feedlot management and pasture-based finishing.</p>
+                    </div>
+                </div>
+
+                <div class="venture-card fade-in">
+                    <div class="card-image" style="background: linear-gradient(135deg, var(--warm-brown), var(--golden));">
+                        <i class="fas fa-drumstick-bite"></i>
+                    </div>
+                    <div class="card-content">
+                        <span class="status status-coming">Coming Soon</span>
+                        <h3>Roadrunner Chickens</h3>
+                        <p>Free-range indigenous chicken farming for meat and egg production. Our roadrunners will be raised naturally, offering healthy, flavorful poultry products.</p>
+                    </div>
+                </div>
+
+                <div class="venture-card fade-in">
+                    <div class="card-image" style="background: linear-gradient(135deg, var(--warm-brown), var(--golden));">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <div class="card-content">
+                        <span class="status status-coming">Coming Soon</span>
+                        <h3>Manure Sales</h3>
+                        <p>Organic fertilizer from our livestock operations, providing farmers with nutrient-rich, natural manure to improve soil fertility and crop yields.</p>
+                    </div>
+                </div>
+
+                <div class="venture-card fade-in">
+                    <div class="card-image" style="background: linear-gradient(135deg, var(--warm-brown), var(--golden));">
+                        <i class="fas fa-egg"></i>
+                    </div>
+                    <div class="card-content">
+                        <span class="status status-coming">Coming Soon</span>
+                        <h3>Chicken Egg Sales</h3>
+                        <p>Fresh, farm eggs from our free-range chickens. We aim to supply households, restaurants, and retailers with quality eggs daily.</p>
+                    </div>
+                </div>
+
+                <div class="venture-card fade-in">
+                    <div class="card-image" style="background: linear-gradient(135deg, var(--warm-brown), var(--golden));">
+                        <i class="fas fa-tractor"></i>
+                    </div>
+                    <div class="card-content">
+                        <span class="status status-coming">Coming Soon</span>
+                        <h3>Other Agricultural Ventures</h3>
+                        <p>We continue to explore new opportunities in agriculture, including horticulture, aquaculture, and agro-processing to maximize our land's potential.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Products & Services</h2>
+                <div class="underline"></div>
+                <p>From our 10 hectares to your table</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card fade-in">
+                    <i class="fas fa-horse"></i>
+                    <h3>Goat Meat</h3>
+                    <p class="price-tag">Premium Kalahari Red</p>
+                    <p>Lean, flavorful meat from our well-bred herd. Available whole, half, or cut portions.</p>
+                    <span class="availability available-now">Available Now</span>
+                </div>
+
+                <div class="product-card fade-in">
+                    <i class="fas fa-wheat"></i>
+                    <h3>Maize</h3>
+                    <p class="price-tag">Bulk & Retail</p>
+                    <p>High-quality grain maize available in bags or bulk orders for households and businesses.</p>
+                    <span class="availability available-now">Available Now</span>
+                </div>
+
+                <div class="product-card fade-in">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Fresh Vegetables</h3>
+                    <p class="price-tag">Covo & Rape</p>
+                    <p>Fresh-picked greens, organically grown and delivered to local markets daily.</p>
+                    <span class="availability available-now">Available Now</span>
+                </div>
+
+                <div class="product-card fade-in">
+                    <i class="fas fa-egg"></i>
+                    <h3>Farm Eggs</h3>
+                    <p class="price-tag">Free-Range</p>
+                    <p>Nutritious eggs from our upcoming roadrunner chicken project.</p>
+                    <span class="availability coming-soon-tag">Coming Soon</span>
+                </div>
+
+                <div class="product-card fade-in">
+                    <i class="fas fa-recycle"></i>
+                    <h3>Organic Manure</h3>
+                    <p class="price-tag">Natural Fertilizer</p>
+                    <p>Rich composted manure to boost your crop yields naturally.</p>
+                    <span class="availability coming-soon-tag">Coming Soon</span>
+                </div>
+
+                <div class="product-card fade-in">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Seedlings</h3>
+                    <p class="price-tag">Quality Starts</p>
+                    <p>Healthy vegetable and crop seedlings for your own farming projects.</p>
+                    <span class="availability coming-soon-tag">Coming Soon</span>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#contact" class="btn btn-primary">Request a Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Farm Life Gallery</h2>
+                <div class="underline"></div>
+                <p>A glimpse into our daily operations</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1484557985045-edf25e08da73?w=600" alt="Kalahari Red Goats">
+                    <div class="gallery-overlay">
+                        <h3>Kalahari Red Goats</h3>
+                        <p>Our premium breeding herd</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=600" alt="Maize Fields">
+                    <div class="gallery-overlay">
+                        <h3>Maize Fields</h3>
+                        <p>Golden harvest season</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1592419044706-39796d40f98c?w=600" alt="Vegetable Plots">
+                    <div class="gallery-overlay">
+                        <h3>Vegetable Plots</h3>
+                        <p>Fresh covo and rape</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600" alt="Farm Landscape">
+                    <div class="gallery-overlay">
+                        <h3>Farm Landscape</h3>
+                        <p>10 hectares of potential</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=600" alt="Team at Work">
+                    <div class="gallery-overlay">
+                        <h3>Team at Work</h3>
+                        <p>Dedicated farm workers</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600" alt="Farm Infrastructure">
+                    <div class="gallery-overlay">
+                        <h3>Infrastructure</h3>
+                        <p>Modern farming facilities</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog" id="blog">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>News & Updates</h2>
+                <div class="underline"></div>
+                <p>Stay informed about our farm's journey</p>
+            </div>
+            <div class="blog-grid">
+                <div class="blog-card fade-in">
+                    <div class="blog-image">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="blog-content">
+                        <span class="date"><i class="far fa-calendar"></i> June 2026</span>
+                        <h3>Seasonal Maize Planting Update</h3>
+                        <p>Our maize fields are thriving this season! We've adopted new spacing techniques that promise a bumper harvest. Read about our latest farming methods.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="blog-card fade-in">
+                    <div class="blog-image">
+                        <i class="fas fa-horse"></i>
+                    </div>
+                    <div class="blog-content">
+                        <span class="date"><i class="far fa-calendar"></i> May 2026</span>
+                        <h3>Kalahari Red Herd Expansion</h3>
+                        <p>We've added 15 new breeding does to our Kalahari Red herd. Learn about our breeding program and the qualities that make this breed exceptional.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="blog-card fade-in">
+                    <div class="blog-image">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="blog-content">
+                        <span class="date"><i class="far fa-calendar"></i> April 2026</span>
+                        <h3>Expansion Plans Announced</h3>
+                        <p>Faithworks is growing! We're excited to announce plans for seedling production, cattle fattening, and roadrunner chickens in the coming months.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Get In Touch</h2>
+                <div class="underline"></div>
+                <p>We'd love to hear from you. Reach out for orders, inquiries, or partnerships.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info fade-in">
+                    <h3>Contact Information</h3>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>St Faith's, Rusape Osborne Area<br>Manicaland Province, Zimbabwe</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p><a href="tel:+263XXXXXXXXX">+263 XXX XXX XXX</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <p><a href="https://wa.me/263XXXXXXXXX" target="_blank">+263 XXX XXX XXX</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:info@faithworksfarming.co.zw">info@faithworksfarming.co.zw</a></p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+
+                    <div class="map-container">
+                        <i class="fas fa-map"></i>
+                        <p>Interactive Map Coming Soon</p>
+                        <p style="font-size: 0.85rem;">St Faith's, Rusape Osborne Area</p>
+                    </div>
+                </div>
+
+                <div class="contact-form fade-in">
+                    <h3 style="color: var(--golden); margin-bottom: 1.5rem;">Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone / WhatsApp</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+263 XXX XXX XXX" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="interest">I'm Interested In</label>
+                            <select id="interest" name="interest">
+                                <option value="">Select an option...</option>
+                                <option value="goat-meat">Goat Meat</option>
+                                <option value="maize">Maize</option>
+                                <option value="vegetables">Vegetables</option>
+                                <option value="manure">Manure</option>
+                                <option value="eggs">Eggs</option>
+                                <option value="seedlings">Seedlings</option>
+                                <option value="bulk-order">Bulk Order</option>
+                                <option value="partnership">Partnership</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us what you need..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Faithworks Venture Farming — Where Dedication Meets the Soil</p>
+        <p>From Our 10 Hectares to Your Table</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;"> Sustainable Farming, Quality Harvests, Growing Futures</p>
+        <p style="margin-top: 1rem; font-size: 0.85rem; opacity: 0.7;"> 2026 Faithworks Venture Farming. All rights reserved.</p>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/263XXXXXXXXX" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Fade in animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        fadeElements.forEach(el => fadeInObserver.observe(el));
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon via WhatsApp or phone.');
+            this.reset();
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
